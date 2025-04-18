@@ -1,42 +1,81 @@
 nodes:
-  - id: project404.root
-    ver: 0.0.1
-    parent: null
-    hash: "4de9ea9d4ea7af17005976c2c13bb324d0bc30989cb004368a14feebc5293ddd"
-    updated: 2025-04-18
-
-  - id: capture/0001-boat-wreck
-    ver: 0.0.1
-    parent: project404.root
-    hash: "4de9ea9d4ea7af17005976c2c13bb324d0bc30989cb004368a14feebc5293ddd"
-    updated: 2025-04-18
-    stage: basics
-    data:
-      reporter: "Arsen"
-      title: "Boat hull cracks near pier"
-      location:
-        lat: 43.3
-        lon: 77.0
-      description: "Во время шторма льдина ударила по бортам, появились трещины."
-      severity: "high"
-    fields:
-      photos: []
-      witness_statements: []
-
-  - id: capture/0002-anchor-drag
-    ver: 0.0.1
-    parent: project404.root
-    hash: "4de9ea9d4ea7af17005976c2c13bb324d0bc30989cb004368a14feebc5293ddd"
-    updated: 2025-04-18
-    stage: capture
-    data:
-      reporter: "Arsen"
-      title: "Anchor dragging on seabed"
-      description: "Якорь периодически соскальзывает по дну, угрожая судну."
-      severity: "medium"
-
+- id: project404.root
+  ver: 0.0.1
+  parent: null
+  hash: 4de9ea9d4ea7af17005976c2c13bb324d0bc30989cb004368a14feebc5293ddd
+  updated: 2025-04-18
+- id: capture/0001-boat-wreck
+  ver: 0.0.1
+  parent: project404.root
+  hash: 4de9ea9d4ea7af17005976c2c13bb324d0bc30989cb004368a14feebc5293ddd
+  updated: 2025-04-18
+  stage: basics
+  data:
+    reporter: Arsen
+    title: Boat hull cracks near pier
+    location:
+      lat: 43.3
+      lon: 77.0
+    description: Во время шторма льдина ударила по бортам, появились трещины.
+    severity: high
+  fields:
+    photos: []
+    witness_statements: []
+- id: capture/0002-anchor-drag
+  ver: 0.0.1
+  parent: project404.root
+  hash: 4de9ea9d4ea7af17005976c2c13bb324d0bc30989cb004368a14feebc5293ddd
+  updated: 2025-04-18
+  stage: capture
+  data:
+    reporter: Arsen
+    title: Anchor dragging on seabed
+    description: Якорь периодически соскальзывает по дну, угрожая судну.
+    severity: medium
+- id: capture/seed-01
+  ver: 0.0.1
+  parent: project404.root
+  hash: ''
+  updated: '2025-04-18'
+  stage: capture
+  processed: false
+  data:
+    reporter: seed
+    title: Seed point 1
+    description: Auto-generated seed point for testing
+    severity: low
+- id: capture/seed-02
+  ver: 0.0.1
+  parent: project404.root
+  hash: ''
+  updated: '2025-04-18'
+  stage: capture
+  processed: false
+  data:
+    reporter: seed
+    title: Seed point 2
+    description: Auto-generated seed point for testing
+    severity: low
+- id: capture/seed-03
+  ver: 0.0.1
+  parent: project404.root
+  hash: ''
+  updated: '2025-04-18'
+  stage: capture
+  processed: false
+  data:
+    reporter: seed
+    title: Seed point 3
+    description: Auto-generated seed point for testing
+    severity: low
 edges:
-  - parent: project404.root
-    child: capture/0001-boat-wreck
-  - parent: project404.root
-    child: capture/0002-anchor-drag
+- parent: project404.root
+  child: capture/0001-boat-wreck
+- parent: project404.root
+  child: capture/0002-anchor-drag
+- parent: project404.root
+  child: capture/seed-01
+- parent: project404.root
+  child: capture/seed-02
+- parent: project404.root
+  child: capture/seed-03
