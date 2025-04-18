@@ -1,0 +1,50 @@
+# Makefile для Project404 (Steyr Sprint)
+
+# Единый граф-файл
+GRAPH := project404.graph.yaml
+# AI выводы
+CONCLUSIONS := action/conclusions
+
+# Подхват .env автоматически
+ifneq (,$(wildcard ./.env))
+	include .env
+	export OPENAI_API_KEY
+endif
+
+.PHONY: help init seed hash ai commit all
+
+help:
+	@echo "Использование:"
+	@echo "  make init      — инициализация git"
+	@echo "  make seed      — генерация тестовых точек боли"
+	@echo "  make hash      — пересчитать и вставить hash в $(GRAPH)"
+	@echo "  make ai        — запустить Echo-агента (churn.py)"
+	@echo "  make commit    — добавить и закоммитить изменения"
+	@echo "  make all       — seed → hash → ai → commit"
+
+init:
+	git init
+	@echo "Git репозиторий инициализирован"
+
+seed:
+	@echo "Генерируем 3 тестовые точки боли…"
+	python scripts/seed_nodes.py --count 3
+	@echo "Seed completed"
+
+hash:
+	@echo "Пересчет hash для $(GRAPH)…"
+	@NEW=$$(sha256sum $(GRAPH) | awk '{print $$1}'); \
+	sed -i "s|hash: \".*\"|hash: \"$$NEW\"|" $(GRAPH); \
+	@echo "Новый hash: $$NEW"
+
+ai:
+	@echo "Запуск Echo-агента (churn.py)…"
+	python churn.py
+
+commit:
+	@echo "Коммитим изменения…"
+	git add $(GRAPH) $(CONCLUSIONS)/*
+	git commit -m "chore: auto-patch via Echo-agent & hash update"
+
+all: seed hash ai commit
+	@echo "Готово! Один цикл DBQA пройден."
