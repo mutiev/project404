@@ -1,11 +1,11 @@
 - id: capture/0001-boat-wreck
   ver: 0.0.1
   parent: project404.root
-  hash: "58b104e71f8a8494b1684fd3b5541fa816256ae2b55de445d260324a95d7fcae"                   # позже пересчитаем
-  updated: 2025-04-20
+  hash: "6d89d08a254b24f6c731b8d1e5bee2f9bd90b8d3489b939fece9717796689822"                   
+  updated: 2025-04-18        # ← сегодня, 18 апреля
   data:
     reporter: "Arsen"
-    title: "Boat hull cracks near pier with metadata"
+    title: "Boat hull cracks near pier"
     location:
       lat: 43.3
       lon: 77.0
