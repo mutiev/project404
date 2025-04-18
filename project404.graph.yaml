@@ -1,8 +1,9 @@
 nodes:
-  - id: project404.root
+  - id: capture/0001-boat-wreck
     ver: 0.0.1
-    parent: null
+    parent: project404.root
     hash: ""
     updated: 2025-04-20
-edges: []
-
+edges:
+  - parent: project404.root
+    child: capture/0001-boat-wreck
