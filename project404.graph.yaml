@@ -1,9 +1,13 @@
-nodes:
-  - id: capture/0001-boat-wreck
-    ver: 0.0.1
-    parent: project404.root
-    hash: ""
-    updated: 2025-04-20
-edges:
-  - parent: project404.root
-    child: capture/0001-boat-wreck
+- id: capture/0001-boat-wreck
+  ver: 0.0.1
+  parent: project404.root
+  hash: "58b104e71f8a8494b1684fd3b5541fa816256ae2b55de445d260324a95d7fcae"                   # позже пересчитаем
+  updated: 2025-04-20
+  data:
+    reporter: "Arsen"
+    title: "Boat hull cracks near pier"
+    location:
+      lat: 43.3
+      lon: 77.0
+    description: "Во время шторма льдина ударила по бортам, появились трещины."
+    severity: "high"
