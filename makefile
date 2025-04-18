@@ -45,9 +45,10 @@ seed:
 
 hash:
 	@echo "Пересчет hash для $(GRAPH)…"
-	@NEW=$$(sha256sum $(GRAPH) | awk '{print $$1}'); \
-	sed -i "s|hash: \".*\"|hash: \"$$NEW\"|" $(GRAPH); \
-	@echo "Новый hash: $$NEW"
+	@bash -c '\
+	NEW=$$(sha256sum $(GRAPH) | cut -d" " -f1) && \
+	sed -i "s|hash: \".*\"|hash: \"$$NEW\"|" $(GRAPH) && \
+	echo "Новый hash: $$NEW"'
 
 ai:
 	@echo "Запуск Echo‑агента (churn.py)…"
