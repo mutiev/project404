@@ -140,6 +140,42 @@ nodes:
     title: Seed point 9
     description: Auto-generated seed point for testing
     severity: low
+- id: capture/seed-10
+  ver: 0.0.1
+  parent: project404.root
+  hash: ''
+  updated: '2025-04-18'
+  stage: capture
+  processed: false
+  data:
+    reporter: seed
+    title: Seed point 10
+    description: Auto-generated seed point for testing
+    severity: low
+- id: capture/seed-11
+  ver: 0.0.1
+  parent: project404.root
+  hash: ''
+  updated: '2025-04-18'
+  stage: capture
+  processed: false
+  data:
+    reporter: seed
+    title: Seed point 11
+    description: Auto-generated seed point for testing
+    severity: low
+- id: capture/seed-12
+  ver: 0.0.1
+  parent: project404.root
+  hash: ''
+  updated: '2025-04-18'
+  stage: capture
+  processed: false
+  data:
+    reporter: seed
+    title: Seed point 12
+    description: Auto-generated seed point for testing
+    severity: low
 edges:
 - parent: project404.root
   child: capture/0001-boat-wreck
@@ -163,3 +199,9 @@ edges:
   child: capture/seed-08
 - parent: project404.root
   child: capture/seed-09
+- parent: project404.root
+  child: capture/seed-10
+- parent: project404.root
+  child: capture/seed-11
+- parent: project404.root
+  child: capture/seed-12
